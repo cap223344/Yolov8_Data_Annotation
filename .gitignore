@@ -36,7 +36,7 @@ generate_report.js
 package.json
 
 # Training outputs (large files)
-YOLOV8_Data_Labeling/runs/
+YOLOV8_Data_Labeling/runs/detect/
 YOLOV8_Data_Labeling/models/
 YOLOV8_Data_Labeling/__pycache__/
 YOLOV8_Data_Labeling/**/__pycache__/
