@@ -1,0 +1,35 @@
+# configs/active_learning_system.yaml
+# 主动学习系统完整配置
+
+model:
+  size: "yolov8s.yaml"
+  device: "cuda"
+  image_size: 640
+  use_attention: false
+
+# 数据配置
+data:
+  dataset_path: "D:/py/启用主动学习和注意力机制的yolov8/Data"
+  img_format: ".png"
+
+# 训练参数
+training:
+  epochs_per_iteration: 20
+  batch_size: 4
+  patience: 8
+  learning_rate: 0.01
+  weight_decay: 0.0005
+
+# 主动学习配置
+active_learning:
+  enabled: true
+  initial_labeled_ratio: 0.05  # 初始标注数据比例
+  iterations: 3               # 主动学习迭代次数
+  samples_per_iteration: 30   # 每次迭代选择的样本数
+  sampling_strategy: "uncertainty"  # uncertainty, diversity, hybrid
+  uncertainty_method: "least_confidence"  # least_confidence, margin, entropy
+
+# 类别定义
+names:
+  0: "rc"
+  1: "vt"

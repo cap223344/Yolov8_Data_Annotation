@@ -1,0 +1,44 @@
+# configs/improved_al_config.yaml
+# 改进的主动学习配置 - 独立验证集 + 噪声增强
+
+model:
+  size: "yolov8n.yaml"
+  device: "cuda"
+  image_size: 640
+  use_attention: false
+
+# 数据配置
+data:
+  dataset_path: "D:/py/启用主动学习和注意力机制的yolov8/Data"
+  img_format: ".png"
+  val_ratio: 0.2  # 从整个数据集中划分验证集的比例
+
+# 训练参数
+training:
+  epochs_per_iteration: 20
+  batch_size: 4
+  patience: 8
+  learning_rate: 0.01
+  weight_decay: 0.0005
+
+# 主动学习配置
+active_learning:
+  enabled: true
+  initial_labeled_ratio: 0.164  # 从训练数据中划分初始标注集的比例
+  iterations: 1
+  samples_per_iteration: 1
+  sampling_strategy: "uncertainty"
+  uncertainty_method: "least_confidence"
+
+# 噪声增强配置
+noise_augmentation:
+  enable_noise: true           # 是否启用噪声增强
+  enable_white_noise: true     # 启用白噪声
+  enable_salt_pepper: false    # 启用椒盐噪声
+  snr_db: 12                   # 白噪声信噪比 (dB)，值越小噪声越大
+  salt_pepper_ratio: 0.01      # 椒盐噪声比例
+
+# 类别定义
+names:
+  0: "rc"
+  1: "vt"

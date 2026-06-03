@@ -1,0 +1,17 @@
+@echo off
+echo 启动通信信号检测项目...
+
+REM 设置新项目路径
+set PROJECT_ROOT=D:\py\启用主动学习和注意力机制的yolov8
+cd /d %PROJECT_ROOT%
+
+REM 设置Python路径
+set PYTHONPATH=%PROJECT_ROOT%
+
+REM 运行迁移检查
+echo 检查项目迁移状态...
+python check_migration.py
+
+echo.
+echo 项目启动完成！
+pause

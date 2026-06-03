@@ -1,0 +1,28 @@
+active_learning:
+  sampling_strategy: hybrid
+  uncertainty_method: least_confidence
+attention:
+  backbone:
+  - cbam
+  - cbam
+  - ema
+  - small_target
+  head:
+  - cbam
+  neck:
+  - gam
+  - small_target
+data:
+  dataset_path: D:/py/启用主动学习和注意力机制的yolov8/YOLOV8_Data_Labeling/Data
+  img_format: .png
+model:
+  device: cuda
+  image_size: 640
+  size: yolov8s.yaml
+  use_attention: true
+training:
+  batch_size: 16
+  initial_epochs: 100
+  learning_rate: 0.01
+  patience: 20
+  weight_decay: 0.0005

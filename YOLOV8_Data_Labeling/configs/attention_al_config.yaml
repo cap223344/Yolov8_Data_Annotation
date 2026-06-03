@@ -1,0 +1,41 @@
+# configs/attention_al_config.yaml
+# 注意力机制 + 主动学习完整配置
+
+model:
+  size: "yolov8s-attention.yaml"
+  device: "cuda"
+  image_size: 640
+  use_attention: true
+
+# 注意力机制配置
+attention:
+  backbone: ["cbam", "cbam", "ema", "small_target"]
+  neck: ["gam", "small_target"]
+  head: ["cbam"]
+
+# 数据配置
+data:
+  dataset_path: "D:/py/启用主动学习和注意力机制的yolov8/Data"
+  img_format: ".png"
+
+# 训练参数
+training:
+  initial_epochs: 50
+  batch_size: 8
+  patience: 15
+  learning_rate: 0.01
+  weight_decay: 0.0005
+
+# 主动学习配置
+active_learning:
+  enabled: true
+  sampling_strategy: "hybrid"  # uncertainty, diversity, hybrid
+  uncertainty_method: "least_confidence"  # least_confidence, margin, entropy
+  iterations: 3
+  samples_per_iteration: 50
+  initial_labeled_ratio: 0.3  # 初始标注数据比例
+
+# 类别定义
+names:
+  0: "rc"
+  1: "vt"

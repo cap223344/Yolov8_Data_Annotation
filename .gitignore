@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large model files (track with Git LFS if needed)
+*.pt
+
+# Temporary report generation files
+generate_report.js
+package.json
+
+# Training outputs (large files)
+YOLOV8_Data_Labeling/runs/
+YOLOV8_Data_Labeling/models/
+YOLOV8_Data_Labeling/__pycache__/
+YOLOV8_Data_Labeling/**/__pycache__/
+
+# Active learning data (many label files)
+YOLOV8_Data_Labeling/active_learning/
+
+# Data files (too many, track separately)
+Data/
+数字信号处理课程项目报告.docx
+数字信号处理课程项目报告_v2.docx

@@ -1,0 +1,10 @@
+[
+  {
+    "iteration": 0,
+    "train_samples": 203,
+    "val_samples": 247,
+    "unlabeled_samples": 788,
+    "mAP50": 0.9568860297911974,
+    "mAP50_95": 0.6340110972083051
+  }
+]

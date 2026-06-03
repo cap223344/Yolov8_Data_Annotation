@@ -1,0 +1,26 @@
+[
+  {
+    "iteration": 0,
+    "train_samples": 197,
+    "val_samples": 50,
+    "unlabeled_samples": 991,
+    "mAP50": 0.9571748493458506,
+    "mAP50_95": 0.644797810887967
+  },
+  {
+    "iteration": 1,
+    "train_samples": 227,
+    "val_samples": 50,
+    "unlabeled_samples": 961,
+    "mAP50": 0.9675428347501684,
+    "mAP50_95": 0.6595893484975709
+  },
+  {
+    "iteration": 2,
+    "train_samples": 257,
+    "val_samples": 50,
+    "unlabeled_samples": 931,
+    "mAP50": 0.9639003608096017,
+    "mAP50_95": 0.6499506184155643
+  }
+]
